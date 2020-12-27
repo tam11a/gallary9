@@ -93,6 +93,8 @@ ul{
     margin: 0 3vw;
     /* background-color: #0c0c0c; */
     border: 2px solid #fff;
+    /* border-top: none;
+    border-bottom: none; */
     padding: 2vw 0;
     width: 10vw;
     text-align: center;
@@ -316,4 +318,120 @@ ul{
     color: #f00;
     text-decoration: none;
     font-weight: bold;
+}
+#logoScr{
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1.5s ease,
+                visibility 1.5s ease;
+}
+.isVisible{
+    visibility: visible;
+}
+@media(max-width: 1025px){
+    *{
+        font-size: 0.97em;
+    }
+}
+@media(max-width: 878px){
+    .desc-title{
+        font-size: 2em;
+    }
+    .container{
+        width: 45vw;
+    }
+}
+@media(max-width: 770px){
+    .nav{
+        left: 30vw;
+    }   
+}
+@media(max-width: 570px){
+    #logoScr{
+        width: 100%;
+        text-align: center;
+        padding-left: .3em;
+    }
+    .btn0{
+        top: 100vh;
+        left: 50vw;
+        transform: translate(-50%, -10vh);
+    }
+    .nav{
+        left: 50vw;
+    }
+    .nav>li{
+        color: #ffffffa9;
+        padding: 0 5px;
+        text-align: center;
+        font-size: .7em;
+        /* visibility: hidden; */
+    }
+    .nav>li.open-nav{
+        font-size: 1.2em;
+        visibility: visible;
+        padding: 10px 5px;
+    }    
+    #active,
+    .nav:hover>#active:hover,
+    .nav>li:hover{
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+    }
+    .nav>li.open-nav#active{
+        color: #fff;
+        font-size: 1.6em;
+        /* transition: font-size .5s ease; */
+    }
+    .nav-devider{
+        display: inline-flex;
+        position: absolute;
+        top: 10vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        color: transparent;
+        width: 70vw;
+    }
+    
+    .nav-devider>li{
+        margin: auto;
+        padding: 10px 0;
+        width: 30%;
+        color: #fff;
+        transition: background 1s ease,
+                    color 1s ease;
+    }
+    .nav-devider>li:hover{
+        box-shadow: none;
+    }
+    .nav-devider>li::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background: #fff;
+        z-index: 2;
+    }   
+    .isVisible{
+        visibility: visible;
+    }
+    .cotainer{
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(0);
+        height: 100vh;
+        width: 90vw;
+        background: linear-gradient(to bottom, rgba(226, 226, 226, 0.616), rgba(0, 0, 0, 0.692));
+        z-index: 100000;
+    }
+    .container{
+        visibility: hidden;
+    }
+
 }

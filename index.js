@@ -2,8 +2,12 @@ function toggle(){
     document.getElementById("toggleBtn").classList.toggle('toggle');
     //document.getElementsByClassName("show-nav").classList.toggle('show-nav');
     document.getElementById("navigation").classList.toggle('show-nav');
-    document.querySelectorAll('.nav-devider>li')[0].click();
-    document.querySelectorAll('.nav>li')[0].click();
+    if(!isPhone)
+        {
+            document.querySelectorAll('.nav-devider>li')[0].click();
+            document.querySelectorAll('.nav>li')[0].click();
+        }
+    logoSplash();
 }
 
 const nav1 = document.querySelectorAll('.nav-devider>li');
@@ -31,7 +35,12 @@ var listNav = [
 
 const nav0 = document.querySelectorAll('.nav>li');
 nav0.forEach(el => el.addEventListener('click', event => {
-    console.log(event.target.innerHTML);
+    if(isPhone){
+        var tot = event.target.innerHTML;
+        tot += ".html";
+        location.href = tot.replace(" ", "-");
+    }
+    //console.log(event.target.innerHTML);
     var height = (listNav.indexOf(event.target.innerHTML))*(-100)
     //document.getElementById("about").style.top = height+'%';
     var sectors = document.getElementsByClassName('containBox');
@@ -67,7 +76,8 @@ function toogleNav(){
                         else
                             {
                                 navChoosed[i].id = 'active';
-                                navChoosed[i].click();
+                                if(!isPhone)
+                                    navChoosed[i].click();
                             }
                     }
                 }
@@ -76,4 +86,52 @@ function toogleNav(){
                 }}
         }
 }
+var haveSplash = false;
+logoSplash();
+function logoSplash(){
+var w;
+if(window.innerWidth !== undefined) { 
+    w = window.innerWidth;
+  } else {  
+    w = document.documentElement.clientWidth;
+}
+if(w<570){
+    var t = document.getElementById("logoScr");
+    //console.log(t); t.style.visibility || 
+    if(haveSplash)
+    {
+        t.style.visibility = "hidden";
+        t.style.opacity = "0";
+        haveSplash = false;
+    }
+    else
+    {
+        t.style.visibility = "visible";
+        t.style.opacity = "100%";
+        haveSplash = true;
+    }
+}
+}
 
+function isPhone(){
+    var w;
+    if(window.innerWidth !== undefined) { 
+        w = window.innerWidth;
+    } else {  
+        w = document.documentElement.clientWidth;
+    }
+    if(w<570)
+        return true;
+    else 
+        return false;
+}
+
+
+
+// if(window.innerWidth !== undefined && window.innerHeight !== undefined) { 
+//     var w = window.innerWidth;
+//     var h = window.innerHeight;
+//   } else {  
+//     var w = document.documentElement.clientWidth;
+//     var h = document.documentElement.clientHeight;
+// }
