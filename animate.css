@@ -1,0 +1,10 @@
+.cursor {
+    cursor: none;
+    pointer-events: none;
+    position: fixed;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+}

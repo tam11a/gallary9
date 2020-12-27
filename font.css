@@ -1,0 +1,10 @@
+/* NeueMachina-Light.otf */
+@font-face {
+    font-family: neuemachina-light;
+    src: url('NeueMachina-Light.otf');
+  }
+
+@font-face {
+  font-family: engadget;
+  src: url('Engadget.ttf');
+}

@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: neuemachina-light, sans-serif;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+ a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+.screen0{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+    /* background-color: #0c0c0c; */
+    z-index: 1;
+}
+.screen-1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 500vw;
+    background-color: #0c0c0c;
+    box-shadow: 0 0 500px #000;
+    /* transform: translateX(-250vw) rotate(45deg); */
+    /* transform: translate(-220vw, 0) rotate(90deg); */
+    z-index: -1;
+}
+.screen-2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 500vw;
+    background-color: #0c0c0c;
+    box-shadow: 0 0 500px #000;
+    transform: translateX(-75vw) rotate(45deg);
+    z-index: -2;
+}
+.nav{
+    position: fixed;
+    top: 50vh;
+    left: 20vw;
+    transform: translate(-50%, -50%);
+}
+.nav>li{
+    margin: 10px 0;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+#active,
+.nav:hover>#active:hover,
+.nav>li:hover{
+    padding-left: 8px;
+    border-left: 2px solid #fff;
+}
+
+.nav:hover>#active{
+    padding-left: 10px;
+    border: none;
+}
+
+.nav-devider{
+    display: inline-flex;
+    position: absolute;
+    top: 85vh;
+    right: 0;
+    transform: translateY(-50%);
+}
+.nav-devider>li{
+    position: relative;
+    margin: 0 3vw;
+    /* background-color: #0c0c0c; */
+    border: 2px solid #fff;
+    padding: 2vw 0;
+    width: 10vw;
+    text-align: center;
+    border-radius: 4vw;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    transition: background 1s ease,
+                color 1s ease;
+    z-index: 3;
+}
+.nav-devider>li:hover{
+    box-shadow: inset 0 0 10px #fff;
+}
+
+.nav-devider>li#onscreen{
+    background-color: #fff;
+    color: #0c0c0c;
+    transition: background 1s ease,
+                color 1s ease;
+}
+.nav-devider>li::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 6.2vw;
+    height: .2em;
+    background: #fff;
+    z-index: 2;
+}
+
+.btn0{
+    position: fixed;
+    top: 50vh;
+    transform: translateY(-50%);
+    left: 5vw;
+    /* background-color: #fff; */
+    height: 20px;
+    width: 30px;
+    z-index: 1000;
+}
+.btn0::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.5s ease;
+}
+.btn0::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.5s ease;
+}
+/* .btn0:hover::before, */
+.btn0.toggle::before{
+    transform: translateY(9px) rotate(45deg);
+    transition: transform 0.5s ease;
+}
+
+/* .btn0:hover::after, */
+.btn0.toggle::after{
+    transform: translateY(-9px) rotate(-45deg);
+    transition: transform 0.5s ease;
+}
+
+.nav{
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.show-nav{
+    opacity: 100%;
+    transition: opacity 1s ease;
+}
+
+.home-nav,
+.event-nav,
+.contact-nav{
+    /* display: none; */
+    font-size: 0.1em;
+    transition: font-size .3s ease;
+    /* opacity: 10%;
+    transition: opacity 1s ease; */
+}
+
+.open-nav{
+    /* opacity: 100%;
+    transition: opacity 1s ease; */
+    /* display: list-item; */
+    font-size: 1em;
+    transition: font-size .3s ease;
+}
+
+.container{
+    width: 40vw;
+    height: 50vh;
+    position: fixed;
+    top: 50vh;
+    right: 5vw;
+    transform: translateY(-50%);
+    /* border: 1px solid #fff; */
+    overflow: hidden;
+}
+.containBox{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    transition: top 1s ease;
+}
+.logo{
+    text-align: right;
+    font-family: engadget, sans-serif;
+    font-size: 4em;
+}
+.l9{
+    color: #ff0000;
+    font-size: 1.5em;
+}
+.open{
+    color: #00ff00;
+}
+.closed{
+    color: #333;
+}
+.desc-title{
+    color: #f00;
+    text-align: right;
+    font-size: 2.5em;
+}
+.desc-a{
+    padding: 20px 0;
+    text-align: justify;
+    font-size: 0.9em;
+}
+.desc-b{
+    font-size: 1.2em;
+    text-align: right;
+}
+.desc-c{
+    text-align: right;
+    font-size: 0.9em;
+}
+.desc-a>p{
+    margin-bottom: 10px;
+}
+.desc-tab{
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+}
+.desc-tab tr{
+    height: 2em;
+}
+.desc-tab th{
+    background: #fff;
+    color: #000;
+}
+.desc-tab td{
+    box-shadow: inset 0 0 2px #fff;
+}
+.desc-tab .vacon{
+    box-shadow: inset 0 0 4px #0f0;
+    color: #0f0;
+}
+.desc-form{
+    width: 50%;
+}
+.desc-form textarea,
+.desc-form input{
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 5px;
+    height: 30px;
+    color: #fff;
+    padding: 0 10px;
+}
+.desc-form textarea::placeholder,
+.desc-form input::placeholder{
+    color: #fff;
+    font-size: 0.8em;
+}
+.desc-form textarea::placeholder{
+    font-size: 0.7em;
+}
+.desc-form input{
+    border-bottom: 1px solid #fff;
+}
+.desc-form textarea{
+    text-align: left;
+    height: 60px;
+    /* border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none; */
+    border-bottom: 1px solid #fff;
+}
+.desc-form input[type="button"]{
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+}
+.containBox>a.footer{
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    width: 100%;
+    text-align: right;
+    color: #f00;
+    text-decoration: none;
+    font-weight: bold;
+}
