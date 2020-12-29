@@ -5,15 +5,18 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Gallery9 || index</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='cursor.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='font.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='background-index.css'>
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-d"></div>
     <section class="screen0">
-        <div class="btn0" id="toggleBtn" onclick="toggle()"></div>
-        <div class="logo" id="logoScr">Gallery<span class="l9">9</span></div>
-        <ul class="nav" id="navigation">
+        <div class="btn0 mskey" id="toggleBtn" onclick="toggle()"></div>
+        <div class="logo mskey" id="logoScr">Gallery<span class="l9">9</span></div>
+        <ul class="nav mskey" id="navigation">
             <li class="home-nav open-nav" id="active">about</li>
             <li class="home-nav open-nav">history</li>
             <li class="home-nav open-nav">rental information</li>
@@ -25,12 +28,13 @@
             <li class="contact-nav">rent the gallery</li>
             <li class="contact-nav">quick text</li>
         </ul>
-        <ul class="nav-devider">
+        <ul class="nav-devider mskey">
             <li id="onscreen">home</li>
             <li>event</li>
             <li>contact</li>
         </ul>
-        <div class="container">
+        <div class="container" id="Con">
+            <div class="cross" onclick="toggleCon()"></div>
             <div class="containBox">
                 <div class="logo">Gallery<span class="l9">9</span></div>
                 <div class="desc-a">
@@ -76,6 +80,7 @@
                             <td>5,000tk</td>
                         </tr>
                     </table>
+                    <br>
                     <p>*Please note that a 2-week advance booking is preferred.</p>
                 </div>
                 <a href="#" class="footer">See More</a>
@@ -196,6 +201,8 @@
             <li></li>
         </ul>
     </div>
+    
     <script src='index.js'></script>
+    <script src='cursor.js'></script>
 </body>
 </html>

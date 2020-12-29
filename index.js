@@ -2,7 +2,7 @@ function toggle(){
     document.getElementById("toggleBtn").classList.toggle('toggle');
     //document.getElementsByClassName("show-nav").classList.toggle('show-nav');
     document.getElementById("navigation").classList.toggle('show-nav');
-    if(!isPhone)
+    if(!isPhone())
         {
             document.querySelectorAll('.nav-devider>li')[0].click();
             document.querySelectorAll('.nav>li')[0].click();
@@ -35,11 +35,16 @@ var listNav = [
 
 const nav0 = document.querySelectorAll('.nav>li');
 nav0.forEach(el => el.addEventListener('click', event => {
-    if(isPhone){
-        var tot = event.target.innerHTML;
-        tot += ".html";
-        location.href = tot.replace(" ", "-");
+    // if(isPhone()){
+    //     var tot = event.target.innerHTML;
+    //     tot += ".html";
+    //     location.href = tot.replace(" ", "-");
+    // }
+
+    if(isPhone()){
+        toggleCon();
     }
+
     //console.log(event.target.innerHTML);
     var height = (listNav.indexOf(event.target.innerHTML))*(-100)
     //document.getElementById("about").style.top = height+'%';
@@ -76,7 +81,7 @@ function toogleNav(){
                         else
                             {
                                 navChoosed[i].id = 'active';
-                                if(!isPhone)
+                                if(!isPhone())
                                     navChoosed[i].click();
                             }
                     }
@@ -126,6 +131,20 @@ function isPhone(){
         return false;
 }
 
+function toggleCon(){
+    // moveCon
+    document.getElementById("Con").classList.toggle('moveCon');
+    var io = document.getElementsByClassName('mskey');
+    for(i in io){
+        try{
+            io[i].classList.toggle('moveScr0');
+        }
+        catch{
+            //pass
+        }
+    }
+    //left: -100vw;
+}
 
 
 // if(window.innerWidth !== undefined && window.innerHeight !== undefined) { 
